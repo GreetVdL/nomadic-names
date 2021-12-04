@@ -1,0 +1,119 @@
+@use "./base/variables" as *;
+@use "./base/fonts";
+@use "./base/reset";
+
+// variables
+
+@property --HROT {
+  syntax: "<number>"; /* <- defined as type number for the transition to work */
+  initial-value: 30;
+  inherits: false;
+}
+
+@property --VROT {
+  syntax: "<number>"; /* <- defined as type number for the transition to work */
+  initial-value: -45;
+  inherits: false;
+}
+
+// fonts
+
+@font-face {
+  font-family: "Tilt Prism";
+  src: url("../fonts/tilt/TiltPrism[HROT,VROT].woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Borsok";
+  src: url("../fonts/borsok/boorsok.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Monopoly";
+  src: url("../fonts/monopoly/Monopoly-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// base styles
+
+html {
+  font-size: 62.5%;
+  font-family: "Tilt Prism", sans-serif;
+  // scroll-behavior: smooth;
+  body {
+    font-size: 2rem;
+    min-height: 100vh;
+    #container {
+      max-width: 1400px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background-color: $cultured;
+      padding: 0 20px;
+    }
+  }
+}
+
+// header styles
+
+h1 {
+  text-align: center;
+  font-weight: 100;
+  font-size: 8rem;
+  font-variation-settings: "HROT" var(--HROT), "VROT" var(--VROT);
+  //   transition: all 0.5s linear;
+  animation: none;
+  padding: 20px 0;
+}
+
+// intro text styles
+
+.intro {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  font-family: "Source Sans Pro", sans-serif;
+  //   color: $blue;
+  font-weight: 600;
+  font-size: 2.1rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  align-items: flex-start;
+  &__text {
+    border-right: none;
+    width: 0;
+    text-align: center;
+    animation: none;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+// animations
+
+@keyframes tilt {
+  0% {
+    --HROT: 30;
+    --VROT: -45;
+  }
+  100% {
+    --HROT: 0;
+    --VROT: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

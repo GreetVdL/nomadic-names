@@ -1,0 +1,19 @@
+{
+  "name": "nomadic-names",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "clean": "rm -rf .parcel-cache dist output",
+    "build": "parcel build src/index.html --dist-dir output",
+    "deploy": "surge ./output https://nomadicnames.surge.sh"
+  },
+  "author": "Greet",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.0.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.1"
+  }
+}
