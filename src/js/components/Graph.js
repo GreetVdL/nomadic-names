@@ -36,7 +36,8 @@ class Graph {
     // if country results are there
     if (
       store.getState().nationalities.nationalities.country &&
-      store.getState().nationalities.nationalities.country.length
+      store.getState().nationalities.nationalities.country.length &&
+      !store.getState().nationalities.loading
     ) {
       if (document.querySelector("#sad")) {
         document.querySelector("#sad").remove();

@@ -108,7 +108,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 0;
+    padding: 70px 0;
     font-size: 2.2rem;
     input,
     button {
@@ -148,11 +148,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    p {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
+    margin-top: 20px;
     canvas {
       //   height: 0;
     }
