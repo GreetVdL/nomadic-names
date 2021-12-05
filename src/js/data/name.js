@@ -18,14 +18,11 @@ const nationalitiesSlice = createSlice({
     nationalities: {},
     loading: false,
     error: false,
-    counter: 5,
+    input: "Romy",
   },
   reducers: {
-    increment: (state, action) => {
-      state.counter++;
-    },
-    decrement: (state, action) => {
-      state.counter--;
+    setValue(state, { payload }) {
+      state.input = payload;
     },
   },
   extraReducers: {
@@ -40,9 +37,10 @@ const nationalitiesSlice = createSlice({
     [getNationalities.fulfilled]: (state, { payload }) => {
       state.loading = false;
       state.error = false;
-      state.joke = payload;
+      state.nationalities = payload;
     },
   },
 });
 
+export const { setValue } = nationalitiesSlice.actions;
 export default nationalitiesSlice.reducer;

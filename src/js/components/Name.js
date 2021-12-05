@@ -1,5 +1,6 @@
 import store from "../data";
 import { getNationalities } from "../data/name";
+import { setValue } from "../data/name";
 
 class Name {
   constructor(holder) {
@@ -9,14 +10,18 @@ class Name {
     this.button = null;
     this.init();
     // this.render();
-    // this.events();
+    this.events();
     // store.subscribe(this.render.bind(this));
   }
-  //   events() {
-  //     this.btn.onclick = () => {
-  //       store.dispatch(getRandomJoke());
-  //     };
-  //   }
+  events() {
+    this.input.oninput = (e) => {
+      store.dispatch(setValue(e.target.value));
+    };
+
+    this.button.onclick = () => {
+      store.dispatch(getNationalities(store.getState().nationalities.input));
+    };
+  }
   init() {
     this.holder.insertAdjacentHTML(
       "beforeend",

@@ -2,6 +2,7 @@ import "../css/index.scss";
 import store from "./data";
 import { getNationalities } from "./data/name";
 import name from "./components/Name";
+import axios from "axios";
 
 // Intro animation
 
@@ -20,6 +21,6 @@ title.onanimationend = () => {
     // Render de name search elements
     setTimeout(() => {
       name(document.getElementById("search"));
-    }, 1500);
+    }, 800);
   };
 };
