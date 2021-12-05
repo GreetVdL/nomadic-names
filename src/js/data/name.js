@@ -6,12 +6,6 @@ export const getNationalities = createAsyncThunk(
   async (name) => (await axios(`https://api.nationalize.io/?name=${name}`)).data
 );
 
-// export const getAgifyresponse = createAsyncThunk(
-//   "age/getAgifyresponse",
-//   async (naam) => (await axios(`https://api.agify.io/?name=${naam}`)).data
-// );
-// store.dispatch(getAgifyresponse("Jos"))
-
 const nationalitiesSlice = createSlice({
   name: "nationalities",
   initialState: {
