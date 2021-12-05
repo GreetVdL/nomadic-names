@@ -13,11 +13,12 @@ class Graph {
   }
 
   render() {
-    // if no country results are found
+    // if no country results are found or there's an error
     if (
-      store.getState().nationalities.nationalities.country &&
-      !store.getState().nationalities.nationalities.country.length &&
-      !store.getState().nationalities.loading
+      (store.getState().nationalities.nationalities.country &&
+        !store.getState().nationalities.nationalities.country.length &&
+        !store.getState().nationalities.loading) ||
+      store.getState().nationalities.error
     ) {
       if (this.myChart) {
         this.myChart.destroy();
