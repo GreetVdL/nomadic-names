@@ -11,7 +11,10 @@
   "author": "Greet",
   "license": "ISC",
   "dependencies": {
-    "parcel": "^2.0.1"
+    "@reduxjs/toolkit": "^1.6.2",
+    "axios": "^0.24.0",
+    "parcel": "^2.0.1",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1"
