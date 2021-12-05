@@ -1,4 +1,5 @@
 import Chart from "chart.js/auto";
+import countryCodes from "country-codes-list";
 
 import store from "../data";
 // import { getNationalities } from "../data/name";
@@ -39,9 +40,16 @@ class Graph {
       if (document.querySelector("#sad")) {
         document.querySelector("#sad").remove();
       }
+      const countryCodesObject = countryCodes.customList(
+        "countryCode",
+        "{countryNameEn}"
+      );
+      console.log(countryCodesObject);
+
       const codes = store
         .getState()
         .nationalities.nationalities.country.map((c) => c.country_id);
+      const fullCountryNames = codes.map((c) => countryCodesObject[c]);
       const probabilities = store
         .getState()
         .nationalities.nationalities.country.map((c) => c.probability);
@@ -54,7 +62,7 @@ class Graph {
       this.myChart = new Chart(ctx, {
         type: "bar",
         data: {
-          labels: codes,
+          labels: fullCountryNames,
           datasets: [
             {
               label: "Nationality probability",

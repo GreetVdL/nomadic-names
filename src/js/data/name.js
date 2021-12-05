@@ -3,7 +3,9 @@ import axios from "axios";
 
 export const getNationalities = createAsyncThunk(
   "nationalities/getNationalities",
-  async (name) => (await axios(`https://api.nationalize.io/?name=${name}`)).data
+  async (name) => {
+    return (await axios(`https://api.nationalize.io/?name=${name}`)).data;
+  }
 );
 
 const nationalitiesSlice = createSlice({
