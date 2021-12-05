@@ -15,9 +15,9 @@ class Graph {
   render() {
     // if no country results are found
     if (
-      !store.getState().nationalities.nationalities.country ||
-      (store.getState().nationalities.nationalities.country &&
-        !store.getState().nationalities.nationalities.country.length)
+      store.getState().nationalities.nationalities.country &&
+      !store.getState().nationalities.nationalities.country.length &&
+      !store.getState().nationalities.loading
     ) {
       if (this.myChart) {
         this.myChart.destroy();
