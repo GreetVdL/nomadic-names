@@ -8,21 +8,37 @@ class Graph {
   constructor(holder) {
     this.holder = holder;
     this.myChart = null;
-    this.init();
-    // this.events();
     store.subscribe(this.render.bind(this));
-  }
-  init() {
-    this.holder.insertAdjacentHTML(
-      "afterbegin",
-      `
-      <p>Results:</p>
-    `
-    );
   }
 
   render() {
-    if (store.getState().nationalities.nationalities.country) {
+    // if no country results are found
+    if (
+      !store.getState().nationalities.nationalities.country ||
+      (store.getState().nationalities.nationalities.country &&
+        !store.getState().nationalities.nationalities.country.length)
+    ) {
+      if (this.myChart) {
+        this.myChart.destroy();
+      }
+      if (!document.querySelector("#sad")) {
+        const sad = new URL("../../images/sad.svg", import.meta.url);
+        this.holder.insertAdjacentHTML(
+          "afterbegin",
+          `
+          <img src="${sad}" alt="sad smiley" id="sad">
+        `
+        );
+      }
+    }
+    // if country results are there
+    if (
+      store.getState().nationalities.nationalities.country &&
+      store.getState().nationalities.nationalities.country.length
+    ) {
+      if (document.querySelector("#sad")) {
+        document.querySelector("#sad").remove();
+      }
       const codes = store
         .getState()
         .nationalities.nationalities.country.map((c) => c.country_id);

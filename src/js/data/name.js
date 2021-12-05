@@ -33,6 +33,7 @@ const nationalitiesSlice = createSlice({
     [getNationalities.rejected]: (state) => {
       state.loading = false;
       state.error = true;
+      state.nationalities = {};
     },
     [getNationalities.fulfilled]: (state, { payload }) => {
       state.loading = false;

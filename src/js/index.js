@@ -8,7 +8,7 @@ import graph from "./components/Graph";
 
 const title = document.querySelector("h1");
 
-title.style.animation = "tilt 2.5s both";
+title.style.animation = "tilt 3.5s both";
 
 title.onanimationend = () => {
   const introText = document.querySelector(".intro__text");
