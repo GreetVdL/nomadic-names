@@ -160,6 +160,8 @@ main {
     p {
       margin-bottom: 30px;
       font-size: 2.2rem;
+      line-height: 2.7rem;
+      text-align: center;
     }
     canvas {
       //   height: 0;
@@ -318,5 +320,122 @@ main {
   }
   .intro {
     font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 687px) {
+  :root {
+    --fszstart: 3rem;
+    --fszend: 6rem;
+  }
+  .intro {
+    font-size: 2rem;
+  }
+  main {
+    #search {
+      form {
+        font-size: 2rem;
+        input,
+        button {
+          font-size: 1.8rem;
+        }
+        input {
+          width: 240px;
+        }
+      }
+    }
+    #results {
+      width: 80%;
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 603px) {
+  .intro {
+    font-size: 1.8rem;
+  }
+  main {
+    #search {
+      form {
+        font-size: 1.8rem;
+        input,
+        button {
+          font-size: 1.8rem;
+        }
+        input {
+          width: 240px;
+        }
+      }
+    }
+    #results {
+      width: 90%;
+      p {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 437px) {
+  :root {
+    --fszstart: 5rem;
+    --fszend: 6rem;
+  }
+  .intro {
+    font-size: 1.6rem;
+  }
+  main {
+    #search {
+      form {
+        display: flex;
+        font-size: 1.6rem;
+        input,
+        button {
+          font-size: 1.6rem;
+          margin-top: 15px;
+        }
+        input {
+          width: 240px;
+        }
+      }
+    }
+    #results {
+      width: 90%;
+      p {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 391px) {
+  :root {
+    --fszstart: 4rem;
+    --fszend: 5rem;
+  }
+  .intro {
+    font-size: 1.5rem;
+  }
+  main {
+    #search {
+      form {
+        padding: 50px 0;
+      }
+    }
+    #results {
+      width: 95%;
+    }
+  }
+  #sad {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 364px) {
+  .intro {
+    font-size: 1.4rem;
   }
 }
