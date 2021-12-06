@@ -40,6 +40,13 @@ class Name {
       //   store.dispatch(getNationalities(store.getState().nationalities.input));
       store.dispatch(getNationalities(this.input.value));
     };
+    this.button.onclick = () => {
+      this.button.style.animation =
+        "shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both";
+      this.button.onanimationend = () => {
+        this.button.style.animation = "none";
+      };
+    };
   }
 }
 
