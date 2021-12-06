@@ -1,9 +1,6 @@
 import Chart from "chart.js/auto";
 import countryCodes from "country-codes-list";
-
 import store from "../data";
-// import { getNationalities } from "../data/name";
-// import { setValue } from "../data/name";
 
 class Graph {
   constructor(holder) {
@@ -20,9 +17,11 @@ class Graph {
         !store.getState().nationalities.loading) ||
       store.getState().nationalities.error
     ) {
+      // remove the previous chart
       if (this.myChart) {
         this.myChart.destroy();
       }
+      // render a sad smiley if it wasn't already there
       if (!document.querySelector("#sad")) {
         const sad = new URL("../../images/sad.svg", import.meta.url);
         this.holder.insertAdjacentHTML(
@@ -32,50 +31,56 @@ class Graph {
         `
         );
       }
+      // remove the info paragraph
       if (document.querySelector("#likely")) {
         document.querySelector("#likely").remove();
       }
     }
-    // if country results are there
+    // if there are country results
     if (
       store.getState().nationalities.nationalities.country &&
       store.getState().nationalities.nationalities.country.length &&
       !store.getState().nationalities.loading
     ) {
+      // remove the sad smiley icon
       if (document.querySelector("#sad")) {
         document.querySelector("#sad").remove();
       }
+      // remove the previous info paragraph
       if (document.querySelector("#likely")) {
         document.querySelector("#likely").remove();
       }
+      // this is the object containing the country codes info
       const countryCodesObject = countryCodes.customList(
         "countryCode",
         "{countryNameEn}"
       );
-      console.log(countryCodesObject);
-
+      // make an array of the fetched country codes
       const codes = store
         .getState()
         .nationalities.nationalities.country.map((c) => c.country_id);
+      // convert that array to an array of full country names
       const fullCountryNames = codes.map((c) => countryCodesObject[c]);
+      // make an array of the fetched probabilities
       const probabilities = store
         .getState()
         .nationalities.nationalities.country.map((c) => c.probability);
-
+      // destroy any previously existing chart
       if (this.myChart) {
         this.myChart.destroy();
       }
-
+      // retrieve the input value
       const value = document.querySelector("input").value;
+      // make a capitalised version of the input name
       const capitalizedValue = value[0].toUpperCase() + value.slice(1);
-
+      // render the info paragraph with the capitalised name
       this.holder.insertAdjacentHTML(
         "afterbegin",
         `
         <p id="likely">Most likely, ${capitalizedValue} is from ${fullCountryNames[0]}!</p>
       `
       );
-
+      // render the chart
       const ctx = document.getElementById("myChart").getContext("2d");
       this.myChart = new Chart(ctx, {
         type: "bar",
