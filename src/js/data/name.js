@@ -3,9 +3,7 @@ import axios from "axios";
 
 export const getNationalities = createAsyncThunk(
   "nationalities/getNationalities",
-  async (name) => {
-    return (await axios(`https://api.nationalize.io/?name=${name}`)).data;
-  }
+  async (name) => (await axios(`https://api.nationalize.io/?name=${name}`)).data
 );
 
 const nationalitiesSlice = createSlice({
@@ -14,13 +12,8 @@ const nationalitiesSlice = createSlice({
     nationalities: {},
     loading: false,
     error: false,
-    input: "Romy",
   },
-  reducers: {
-    setValue(state, { payload }) {
-      state.input = payload;
-    },
-  },
+  reducers: {},
   extraReducers: {
     [getNationalities.pending]: (state) => {
       state.loading = true;
@@ -39,5 +32,4 @@ const nationalitiesSlice = createSlice({
   },
 });
 
-export const { setValue } = nationalitiesSlice.actions;
 export default nationalitiesSlice.reducer;
