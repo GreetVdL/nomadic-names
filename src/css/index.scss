@@ -60,7 +60,7 @@ html {
       min-height: 100vh;
       margin: 0 auto;
       background-color: $cultured;
-      padding: 0 20px;
+      padding: 0 20px 40px 20px;
     }
   }
 }
@@ -435,7 +435,14 @@ main {
 }
 
 @media screen and (max-width: 364px) {
+  html {
+    body {
+      #container {
+        padding: 0 10px 40px 10px;
+      }
+    }
+  }
   .intro {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }

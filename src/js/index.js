@@ -13,8 +13,8 @@ title.style.animation = "tilt 3s both";
 title.onanimationend = () => {
   const introText = document.querySelector(".intro__text");
   introText.style.animation =
-    "typing 4s steps(33), blink 0.5s step-end infinite alternate";
-  introText.style.width = "33ch";
+    "typing 4s steps(35), blink 0.5s step-end infinite alternate";
+  introText.style.width = "35ch";
   introText.style.borderRight = "3px solid";
   introText.onanimationend = () => {
     introText.style.borderRight = "none";
