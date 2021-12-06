@@ -32,6 +32,9 @@ class Graph {
         `
         );
       }
+      if (document.querySelector("#likely")) {
+        document.querySelector("#likely").remove();
+      }
     }
     // if country results are there
     if (
@@ -41,6 +44,9 @@ class Graph {
     ) {
       if (document.querySelector("#sad")) {
         document.querySelector("#sad").remove();
+      }
+      if (document.querySelector("#likely")) {
+        document.querySelector("#likely").remove();
       }
       const countryCodesObject = countryCodes.customList(
         "countryCode",
@@ -59,6 +65,16 @@ class Graph {
       if (this.myChart) {
         this.myChart.destroy();
       }
+
+      const value = document.querySelector("input").value;
+      const capitalizedValue = value[0].toUpperCase() + value.slice(1);
+
+      this.holder.insertAdjacentHTML(
+        "afterbegin",
+        `
+        <p id="likely">Most likely, ${capitalizedValue} is from ${fullCountryNames[0]}!</p>
+      `
+      );
 
       const ctx = document.getElementById("myChart").getContext("2d");
       this.myChart = new Chart(ctx, {

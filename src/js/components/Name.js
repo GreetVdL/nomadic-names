@@ -5,6 +5,7 @@ import { setValue } from "../data/name";
 class Name {
   constructor(holder) {
     this.holder = holder;
+    this.form = null;
     this.label = null;
     this.input = null;
     this.button = null;
@@ -16,12 +17,15 @@ class Name {
   init() {
     this.holder.insertAdjacentHTML(
       "beforeend",
-      `
-      <label for="name">Try out a name:</label>
-      <input type="text" id="name" placeholder="e.g. Romy"></input>
-      <button>EXPLORE</button>
+      `<form>
+        <label for="name">Try out a name:</label>
+        <br>
+        <input type="text" id="name" placeholder="e.g. Romy"></input>
+        <button type="submit">EXPLORE</button>
+      </form>
     `
     );
+    this.form = this.holder.querySelector("form");
     this.label = this.holder.querySelector("label");
     this.input = this.holder.querySelector("input");
     this.button = this.holder.querySelector("button");
@@ -31,7 +35,8 @@ class Name {
     //   store.dispatch(setValue(e.target.value));
     // };
 
-    this.button.onclick = () => {
+    this.form.onsubmit = (e) => {
+      e.preventDefault();
       //   store.dispatch(getNationalities(store.getState().nationalities.input));
       store.dispatch(getNationalities(this.input.value));
     };

@@ -105,41 +105,49 @@ main {
   flex-direction: column;
   align-items: center;
   #search {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 70px 0;
-    font-size: 2.2rem;
-    input,
-    button {
-      margin-top: 20px;
-      font-size: 2rem;
-    }
-    input {
-      //   background-color: $lblue;
-      border: 2px solid black;
-      color: $blue;
-      border-radius: 20px;
-
-      outline: none;
-      height: 42px;
-      width: 300px;
-      padding: 0 20px;
-      font-family: "Tilt Neon", sans-serif;
-      font-weight: 500;
-      letter-spacing: 0.1rem;
-      &::placeholder {
-        color: $blue;
+    form {
+      //   display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 70px 0;
+      font-size: 2.2rem;
+      label {
+        text-align: center;
+        display: block;
       }
-    }
-    button {
-      background-color: $cultured;
-      padding: 5px 10px;
-      border-radius: 5px;
-      outline: none;
-      font-family: "Tilt Neon";
-      cursor: pointer;
-      transition: all 0.5s;
+      input,
+      button {
+        margin-top: 5px;
+        font-size: 2rem;
+      }
+      input {
+        //   background-color: $lblue;
+        border: 2px solid black;
+        color: $blue;
+        border-radius: 20px;
+        outline: none;
+        height: 42px;
+        width: 300px;
+        padding: 0 20px;
+        font-family: "Tilt Neon", sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+        &::placeholder {
+          color: $blue;
+        }
+      }
+      button {
+        background-color: $cultured;
+        padding: 5px 20px;
+        border: 2px solid black;
+        border-radius: 20px;
+        height: 42px;
+        margin-left: 5px;
+        outline: none;
+        font-family: "Tilt Neon";
+        cursor: pointer;
+        transition: all 0.5s;
+      }
     }
   }
   #results {
@@ -149,6 +157,9 @@ main {
     align-items: center;
     justify-content: flex-start;
     margin-top: 20px;
+    p {
+      margin-bottom: 30px;
+    }
     canvas {
       //   height: 0;
     }
