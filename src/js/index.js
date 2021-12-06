@@ -8,13 +8,13 @@ import graph from "./components/Graph";
 
 const title = document.querySelector("h1");
 
-title.style.animation = "tilt 3s both";
+title.style.animation = "tilt 2s both";
 
 title.onanimationend = () => {
   const introText = document.querySelector(".intro__text");
   introText.style.animation =
-    "typing 4s steps(35), blink 0.5s step-end infinite alternate";
-  introText.style.width = "35ch";
+    "typing 4s steps(33), blink 0.5s step-end infinite alternate";
+  introText.style.width = "33ch";
   introText.style.borderRight = "3px solid";
   introText.onanimationend = () => {
     introText.style.borderRight = "none";
