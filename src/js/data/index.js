@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import logger from "redux-logger";
+// import logger from "redux-logger";
 import nationalities from "./name";
 
 const reducer = {
@@ -8,5 +8,5 @@ const reducer = {
 
 export default configureStore({
   reducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  //   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
