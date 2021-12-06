@@ -1,20 +1,18 @@
 import store from "../data";
 import { getNationalities } from "../data/name";
-import { setValue } from "../data/name";
 
 class Name {
   constructor(holder) {
     this.holder = holder;
     this.form = null;
-    this.label = null;
     this.input = null;
     this.button = null;
     this.init();
     this.events();
-    // store.subscribe(this.render.bind(this));
   }
 
   init() {
+    //   render the form
     this.holder.insertAdjacentHTML(
       "beforeend",
       `<form>
@@ -25,24 +23,26 @@ class Name {
       </form>
     `
     );
+    // references to the form elements
     this.form = this.holder.querySelector("form");
-    this.label = this.holder.querySelector("label");
     this.input = this.holder.querySelector("input");
     this.button = this.holder.querySelector("button");
   }
-  events() {
-    // this.input.oninput = (e) => {
-    //   store.dispatch(setValue(e.target.value));
-    // };
 
+  events() {
+    //   on form submit
     this.form.onsubmit = (e) => {
       e.preventDefault();
-      //   store.dispatch(getNationalities(store.getState().nationalities.input));
+      //   fetch the nationalities with the input value
       store.dispatch(getNationalities(this.input.value));
     };
+
+    // on button click
     this.button.onclick = () => {
+      // start the button animation
       this.button.style.animation =
         "shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both";
+      // and reset after the animation ended
       this.button.onanimationend = () => {
         this.button.style.animation = "none";
       };
