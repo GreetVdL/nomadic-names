@@ -123,7 +123,12 @@ class Graph {
         options: {
           scales: {
             y: {
-              beginAtZero: true,
+              ticks: {
+                precision: 1,
+                format: {
+                  style: "percent",
+                },
+              },
             },
           },
         },
