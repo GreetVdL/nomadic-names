@@ -75,13 +75,18 @@ class Graph {
       const capitalizedValue = value[0].toUpperCase() + value.slice(1);
       // store the age
       const age = store.getState().age.age.age;
-      console.log(store.getState().age.age.age);
+      // store the gender
+      const gender = store.getState().gender.gender.gender;
       // render the info paragraph with the capitalised name
       this.holder.insertAdjacentHTML(
         "afterbegin",
         `
         <p id="likely">Most likely, ${capitalizedValue} is ${
-          age ? "a " + age + " year old" : ""
+          age
+            ? gender
+              ? "a " + age + " year old " + gender
+              : "a " + age + " year old "
+            : ""
         } from ${fullCountryNames[0]}!</p>
       `
       );
