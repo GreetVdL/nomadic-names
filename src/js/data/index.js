@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import logger from "redux-logger";
-import nationalities from "./name";
+import nationalities from "./nationality";
 
 const reducer = {
   nationalities,

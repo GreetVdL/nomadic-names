@@ -1,5 +1,5 @@
 import store from "../data";
-import { getNationalities } from "../data/name";
+import { getNationalities } from "../data/nationality";
 
 class Name {
   constructor(holder) {
