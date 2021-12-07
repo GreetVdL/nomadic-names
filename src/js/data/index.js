@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import logger from "redux-logger";
 import nationalities from "./nationality";
-
-const reducer = {
-  nationalities,
-};
+import age from "./age";
 
 export default configureStore({
-  reducer,
+  reducer: {
+    nationalities,
+    age,
+  },
   //   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });

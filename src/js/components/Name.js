@@ -1,5 +1,6 @@
 import store from "../data";
 import { getNationalities } from "../data/nationality";
+import { getAge } from "../data/age";
 
 class Name {
   constructor(holder) {
@@ -35,6 +36,8 @@ class Name {
       e.preventDefault();
       //   fetch the nationalities with the input value
       store.dispatch(getNationalities(this.input.value));
+      // fetch the age with the input value
+      store.dispatch(getAge(this.input.value));
     };
 
     // on button click
