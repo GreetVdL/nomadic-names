@@ -143,14 +143,20 @@ main {
       font-size: 2.2rem;
       line-height: 2.7rem;
       text-align: center;
+      &.blue {
+        color: $dbarblue;
+      }
+      &.pink {
+        color: $dbarpink;
+      }
     }
   }
 }
 
 @media (hover: hover) and (pointer: fine) {
   main #search button:hover {
-    background-color: $barblue;
-    color: $blue;
+    background-color: $ltaupe;
+    color: $taupe;
   }
 }
 
