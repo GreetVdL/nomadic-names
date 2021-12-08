@@ -15,6 +15,7 @@ You can search for a name and, through the nationalize.io API, the app will show
 - JavaScript Classes
 - Redux Toolkit
 - Async Thunk
+- Nationalize.io, agify.io and genderize.io API
 - responsiveness
 - animations
 - Chart.js
