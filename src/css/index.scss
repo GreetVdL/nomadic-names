@@ -104,7 +104,7 @@ main {
       }
       input {
         border: 2px solid black;
-        color: $blue;
+        color: $dtaupe;
         border-radius: 20px;
         outline: none;
         height: 42px;
@@ -114,7 +114,7 @@ main {
         font-weight: 500;
         letter-spacing: 0.1rem;
         &::placeholder {
-          color: $blue;
+          color: $dtaupe;
         }
       }
       button {
