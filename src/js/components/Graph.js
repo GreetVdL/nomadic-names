@@ -81,9 +81,9 @@ class Graph {
       this.holder.insertAdjacentHTML(
         "afterbegin",
         `
-        <p id="likely" class="${
+        <p id="likely">Most likely, <span class="${
           gender === "male" ? "blue" : gender === "female" ? "pink" : "black"
-        }">Most likely, ${capitalizedValue} is ${
+        }">${capitalizedValue}</span> is ${
           age
             ? gender
               ? "a " + age + " year old " + gender
