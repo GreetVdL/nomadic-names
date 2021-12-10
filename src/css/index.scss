@@ -143,7 +143,8 @@ main {
       font-size: 2.2rem;
       line-height: 2.7rem;
       text-align: center;
-      animation: text-focus-in 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+      // animation: text-focus-in 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+      animation: bounce-in-top 1.1s both;
       span {
         font-weight: 600;
         &.blue {
