@@ -469,14 +469,26 @@ main {
   .intro {
     font-size: 1.5rem;
   }
+  h1 {
+    padding: 25px 0 10px 0;
+  }
+  .intro {
+    padding-top: 10px;
+  }
   main {
     #search {
       form {
-        padding: 50px 0;
+        padding: 20px 0;
+        input {
+          margin-top: 0;
+        }
       }
     }
     #results {
       width: 95%;
+      p {
+        margin-bottom: 10px;
+      }
     }
   }
   #sad {
