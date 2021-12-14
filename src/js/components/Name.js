@@ -35,12 +35,15 @@ class Name {
     //   on form submit
     this.form.onsubmit = (e) => {
       e.preventDefault();
-      //   fetch the nationalities with the input value
-      store.dispatch(getNationalities(this.input.value));
-      // fetch the age with the input value
-      store.dispatch(getAge(this.input.value));
-      // fetch the gender with the input value
-      store.dispatch(getGender(this.input.value));
+      // make the fetch calls if the form value isn't empty
+      if (this.input.value !== "") {
+        //   fetch the nationalities with the input value
+        store.dispatch(getNationalities(this.input.value));
+        // fetch the age with the input value
+        store.dispatch(getAge(this.input.value));
+        // fetch the gender with the input value
+        store.dispatch(getGender(this.input.value));
+      }
     };
 
     // on button click
