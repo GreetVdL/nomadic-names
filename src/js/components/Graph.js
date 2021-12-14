@@ -10,12 +10,13 @@ class Graph {
   }
 
   render() {
-    // if no country results are found or there's an error
+    // if no country results are found or there's an error or an empty form value
     if (
       (store.getState().nationalities.nationalities.country &&
         !store.getState().nationalities.nationalities.country.length &&
         !store.getState().nationalities.loading) ||
-      store.getState().nationalities.error
+      store.getState().nationalities.error ||
+      store.getState().nationalities.value === ""
     ) {
       // remove the previous chart
       if (this.myChart) {
@@ -40,7 +41,8 @@ class Graph {
     if (
       store.getState().nationalities.nationalities.country &&
       store.getState().nationalities.nationalities.country.length &&
-      !store.getState().nationalities.loading
+      !store.getState().nationalities.loading &&
+      store.getState().nationalities.value !== ""
     ) {
       // remove the sad smiley icon
       if (document.querySelector("#sad")) {

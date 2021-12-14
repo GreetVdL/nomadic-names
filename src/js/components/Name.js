@@ -2,6 +2,7 @@ import store from "../data";
 import { getNationalities } from "../data/nationality";
 import { getAge } from "../data/age";
 import { getGender } from "../data/gender";
+import { setValue } from "../data/nationality";
 
 class Name {
   constructor(holder) {
@@ -35,6 +36,8 @@ class Name {
     //   on form submit
     this.form.onsubmit = (e) => {
       e.preventDefault();
+      // store the form value
+      store.dispatch(setValue(this.input.value));
       // make the fetch calls if the form value isn't empty
       if (this.input.value !== "") {
         //   fetch the nationalities with the input value

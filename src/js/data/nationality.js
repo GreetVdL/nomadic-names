@@ -12,8 +12,13 @@ const nationalitiesSlice = createSlice({
     nationalities: {},
     loading: false,
     error: false,
+    value: null,
   },
-  reducers: {},
+  reducers: {
+    setValue(state, { payload }) {
+      state.value = payload;
+    },
+  },
   extraReducers: {
     [getNationalities.pending]: (state) => {
       state.loading = true;
@@ -32,4 +37,5 @@ const nationalitiesSlice = createSlice({
   },
 });
 
+export const { setValue } = nationalitiesSlice.actions;
 export default nationalitiesSlice.reducer;
