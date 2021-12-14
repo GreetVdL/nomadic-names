@@ -72,8 +72,10 @@ class Graph {
       // retrieve the input value
       const value = document.querySelector("input").value;
       // make a capitalised version of the input name
-      const capitalizedValue =
-        value[0].toUpperCase() + value.slice(1).toLowerCase();
+      const capitalizedValue = value
+        .split("-")
+        .map((chunk) => chunk[0].toUpperCase() + chunk.slice(1).toLowerCase())
+        .join("-");
       // store the age
       const age = store.getState().age.age.age;
       // store the gender
