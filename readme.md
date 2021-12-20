@@ -17,3 +17,4 @@ Visit the app at [https://nomadicnames.surge.sh](https://nomadicnames.surge.sh).
 - responsiveness
 - animations
 - Chart.js
+- header font: Copyright 2019 The Tilt Project Authors (https://github.com/andyclymer/Tilt-Typeface)
