@@ -1,4 +1,4 @@
-![screenshot](./src/images/screenshot.png)
+<p align="center"><img src="./src/images/screenshot.png"></p>
 
 ## A fun app built with Redux Toolkit
 
@@ -21,5 +21,4 @@ Visit the app at [https://nomadicnames.surge.sh](https://nomadicnames.surge.sh).
 
 **Demo**
 
-<!-- ![demo](./src/images/ezgif.com-gif-maker.gif) -->
-<img src="./src/images/ezgif.com-gif-maker.gif" />
+<p align="center"><img src="./src/film/ezgif.com-gif-maker.gif"></p>
