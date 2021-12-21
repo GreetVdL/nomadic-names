@@ -21,4 +21,5 @@ Visit the app at [https://nomadicnames.surge.sh](https://nomadicnames.surge.sh).
 
 **Demo**
 
-![demo](./src/images/ezgif.com-gif-maker.gif)
+<!-- ![demo](./src/images/ezgif.com-gif-maker.gif) -->
+<img src="./src/images/ezgif.com-gif-maker.gif" />
