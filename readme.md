@@ -23,6 +23,6 @@ Visit the app at [https://nomadicnames.surge.sh](https://nomadicnames.surge.sh).
 
 <figure class="video_container">
   <video controls="true" allowfullscreen="true" poster="./src/images/screenshot.png">
-    <source src="./src/film/nomadicnames-2021-12-21_07.50.51.mov" type="video/mp4">
+    <source src="./src/film/nomadicnames-2021-12-21_07.50.51.mp4" type="video/mp4">
   </video>
 </figure>
