@@ -37,16 +37,20 @@ class Name {
     this.form.onsubmit = (e) => {
       e.preventDefault();
       // store the form value
-      store.dispatch(setValue(this.input.value));
+      let name = this.input.value;
+      store.dispatch(setValue(name));
       // make the fetch calls if the form value isn't empty
-      if (this.input.value !== "") {
+      if (name !== "") {
         //   fetch the nationalities with the input value
-        store.dispatch(getNationalities(this.input.value));
+        store.dispatch(getNationalities(name));
         // fetch the age with the input value
-        store.dispatch(getAge(this.input.value));
+        store.dispatch(getAge(name));
         // fetch the gender with the input value
-        store.dispatch(getGender(this.input.value));
+        store.dispatch(getGender(name));
       }
+      // clear the form
+      this.input.value = "";
+      // this.input.placeholder = "";
     };
 
     // on button click

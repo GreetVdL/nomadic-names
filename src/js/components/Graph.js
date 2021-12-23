@@ -72,7 +72,7 @@ class Graph {
         .getState()
         .nationalities.nationalities.country.map((c) => c.probability);
       // retrieve the input value
-      const value = document.querySelector("input").value;
+      const value = store.getState().nationalities.value;
       // make a capitalised version of the input name
       const capitalizedValue = value
         .split("-")
