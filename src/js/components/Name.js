@@ -34,7 +34,7 @@ class Name {
 
   events() {
     //   on form submit
-    this.form.onsubmit = (e) => {
+    this.form.onsubmit = async (e) => {
       e.preventDefault();
       // store the form value
       let name = this.input.value;
@@ -42,11 +42,11 @@ class Name {
       // make the fetch calls if the form value isn't empty
       if (name !== "") {
         // fetch the age with the input value
-        store.dispatch(getAge(name));
+        await store.dispatch(getAge(name));
         // fetch the gender with the input value
-        store.dispatch(getGender(name));
+        await store.dispatch(getGender(name));
         //   fetch the nationalities with the input value
-        store.dispatch(getNationalities(name));
+        await store.dispatch(getNationalities(name));
       }
       // clear the form
       this.input.value = "";
