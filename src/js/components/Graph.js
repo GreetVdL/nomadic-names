@@ -1,15 +1,23 @@
 import Chart from "chart.js/auto";
 import countryCodes from "country-codes-list";
+import _ from "lodash";
 import store from "../data";
 
 class Graph {
   constructor(holder) {
     this.holder = holder;
     this.myChart = null;
+    this.prevState = null;
     store.subscribe(this.render.bind(this));
   }
 
   render() {
+    // make sure the subscribe function doesn't call the render function too much by comparing state; *
+    const currState = store.getState().nationalities.nationalities;
+    const stateHasChanged = !_.isEqual(currState, this.prevState);
+
+    this.prevState = currState;
+
     // if no country results are found or there's an error or an empty form value
     if (
       (store.getState().nationalities.nationalities.country &&
@@ -44,6 +52,10 @@ class Graph {
       !store.getState().nationalities.loading &&
       store.getState().nationalities.value !== ""
     ) {
+      //  *
+      if (!stateHasChanged) {
+        return;
+      }
       // remove the sad smiley icon
       if (document.querySelector("#sad")) {
         document.querySelector("#sad").remove();
