@@ -41,12 +41,12 @@ class Name {
       store.dispatch(setValue(name));
       // make the fetch calls if the form value isn't empty
       if (name !== "") {
-        //   fetch the nationalities with the input value
-        store.dispatch(getNationalities(name));
         // fetch the age with the input value
         store.dispatch(getAge(name));
         // fetch the gender with the input value
         store.dispatch(getGender(name));
+        //   fetch the nationalities with the input value
+        store.dispatch(getNationalities(name));
       }
       // clear the form
       this.input.value = "";
